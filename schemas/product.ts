@@ -9,13 +9,13 @@ export default defineField({
       name: 'name',
       type: 'string',
       title: 'Name',
-      validation: (Rule) => Rule.email().required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
-      validation: (Rule) => Rule.email().required(),
+      validation: (Rule) => Rule.required(),
       options: {
         source: 'name',
         maxLength: 100,
@@ -25,19 +25,19 @@ export default defineField({
       name: 'description',
       type: 'text',
       title: 'Description',
-      validation: (Rule) => Rule.email().required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'price',
       type: 'number',
       title: 'Price',
-      validation: (Rule) => Rule.email().required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
-      validation: (Rule) => Rule.email().required(),
+      validation: (Rule) => Rule.required(),
       options: {
         hotspot: true,
       },
@@ -59,7 +59,7 @@ export default defineField({
       name: 'stockStatus',
       type: 'string',
       title: 'Stock Status',
-      validation: (Rule) => Rule.email().required(),
+      validation: (Rule) => Rule.required(),
       options: {
         list: [
           {title: 'In stock', value: 'in-stock'},
@@ -79,8 +79,8 @@ export default defineField({
     //   ],
     // },
     {
-      title: 'Product Colours',
-      name: 'productColours',
+      title: 'Product Colors',
+      name: 'productColors',
       type: 'array',
       of: [
         {
@@ -98,11 +98,22 @@ export default defineField({
           title: 'Promo On',
           name: 'promoOn',
           type: 'boolean',
+          initialValue: false,
         },
         {
           title: 'Promo Price',
           name: 'promoPrice',
           type: 'number',
+        },
+        {
+          title: 'Promo Start',
+          name: 'promoStart',
+          type: 'datetime',
+        },
+        {
+          title: 'Promo End',
+          name: 'promoEnd',
+          type: 'datetime',
         },
       ],
     },

@@ -6,24 +6,45 @@ export default defineField({
   type: 'document',
   fields: [
     {
+      name: 'orderBy',
+      title: 'Order By',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'transactionId',
       title: 'Transaction ID',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'paymentMethod',
       title: 'Payment Method',
       type: 'string',
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'isPaid',
-      title: 'Is Paid',
-      type: 'boolean',
+      name: 'status',
+      title: 'Status',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+      options: {
+        list: [
+          {title: 'Processing', value: 'processing'},
+          {title: 'Completed', value: 'Completed'},
+        ],
+      },
+    },
+    {
+      name: 'totalAmount',
+      title: 'Amount',
+      type: 'number',
     },
     {
       title: 'Order Items',
       name: 'orderItems',
       type: 'array',
+      validation: (Rule) => Rule.required(),
       of: [
         {
           title: 'Order Item',
@@ -35,6 +56,7 @@ export default defineField({
       title: 'Shipping Information',
       name: 'shippingInformation',
       type: 'object',
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'name',
@@ -56,11 +78,6 @@ export default defineField({
           name: 'phoneNumber',
           title: 'Phone Number',
           type: 'string',
-        },
-        {
-          name: 'shippingAmount',
-          title: 'Shipping Amount',
-          type: 'number',
         },
       ],
     },

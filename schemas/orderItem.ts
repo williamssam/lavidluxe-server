@@ -16,19 +16,19 @@ export default defineField({
       type: 'number',
     },
     {
-      name: 'total',
-      title: 'Total',
+      name: 'amount',
+      title: 'Amount',
       type: 'number',
-    },
-    {
-      name: 'image',
-      title: 'Image',
-      type: 'image',
     },
     {
       name: 'color',
       title: 'Color',
       type: 'string',
+    },
+    {
+      name: 'size',
+      title: 'Size',
+      type: 'number',
     },
   ],
 })

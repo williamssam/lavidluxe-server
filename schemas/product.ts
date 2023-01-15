@@ -67,17 +67,6 @@ export default defineField({
         ],
       },
     },
-    // {
-    //   name: 'categories',
-    //   title: 'Categories',
-    //   type: 'array',
-    //   of: [
-    //     {
-    //       type: 'reference',
-    //       to: {type: 'category'},
-    //     },
-    //   ],
-    // },
     {
       title: 'Product Colors',
       name: 'productColors',
@@ -108,12 +97,12 @@ export default defineField({
         {
           title: 'Promo Start',
           name: 'promoStart',
-          type: 'datetime',
+          type: 'date',
         },
         {
           title: 'Promo End',
           name: 'promoEnd',
-          type: 'datetime',
+          type: 'date',
         },
       ],
     },

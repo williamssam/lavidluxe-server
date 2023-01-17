@@ -1,6 +1,6 @@
+import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
 import {deskTool} from 'sanity/desk'
-import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './schemas'
 
 export default defineConfig({
@@ -8,7 +8,7 @@ export default defineConfig({
   title: 'lavidluxe-server',
 
   projectId: 't2mc6s36',
-  dataset: 'production',
+  dataset: process.env.NODE_ENV === 'development' ? 'development' : 'production',
 
   plugins: [deskTool(), visionTool()],
 

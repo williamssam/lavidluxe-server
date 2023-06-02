@@ -12,6 +12,12 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     },
     {
+      name: 'orderId',
+      title: 'Order ID',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'transactionId',
       title: 'Transaction ID',
       type: 'string',
@@ -24,19 +30,25 @@ export default defineField({
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'status',
-      title: 'Status',
+      name: 'paidAt',
+      title: 'Date Paid',
       type: 'string',
       validation: (Rule) => Rule.required(),
-      options: {
-        list: [
-          {title: 'Processing', value: 'processing'},
-          {title: 'Completed', value: 'Completed'},
-        ],
-      },
     },
+    // {
+    //   name: 'status',
+    //   title: 'Status',
+    //   type: 'string',
+    //   validation: (Rule) => Rule.required(),
+    //   options: {
+    //     list: [
+    //       {title: 'Processing', value: 'processing'},
+    //       {title: 'Completed', value: 'Completed'},
+    //     ],
+    //   },
+    // },
     {
-      name: 'totalAmount',
+      name: 'amount',
       title: 'Amount',
       type: 'number',
     },
